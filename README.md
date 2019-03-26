@@ -2,7 +2,7 @@
 
 Se trata de escribir una programa que transforme números romanos en decimales:
 
-`I  uno 
+```I  uno 
 II dos 
 III tres 
 IV  cuatro 
@@ -12,4 +12,4 @@ VII  siete
 VIII  ocho 
 IX   nueve 
 XXXII   treinta y dos 
-XLV   cuarenta y cinco`
+XLV   cuarenta y cinco```
