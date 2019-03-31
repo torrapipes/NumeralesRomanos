@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class ConversorNumerosTest {
 
     @Test
-    public void testVerificar() {
+    public void verificarTest() {
 
 
         assertFalse(ConversorNumeros.verificar("IVX"));
@@ -27,7 +27,7 @@ public class ConversorNumerosTest {
 
 
     @Test
-    public void calcularGruposSubstractivos(){
+    public void calcularGruposSubstractivosTest(){
 
         ConversorNumeros cn = new ConversorNumeros();
 
@@ -40,6 +40,18 @@ public class ConversorNumerosTest {
         cn.calcularGruposSubstractivos("MCCCXL");
 
         assertEquals(40, cn.getResultat());
+
+    }
+
+
+    @Test
+    public void calcularGruposSumatoriosTest(){
+
+        ConversorNumeros cn = new ConversorNumeros();
+
+        cn.calcularGruposSumatorios("XXX");
+
+        assertEquals(30, cn.getResultat());
 
     }
 

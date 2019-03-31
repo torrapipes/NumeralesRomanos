@@ -38,6 +38,29 @@ public class ConversorNumeros {
     }
 
 
+    public void calcularGruposSumatorios(String numero){
+
+        String valoresSumatorios = "C(?![MD])|X(?![CLMD])|I(?![XCLDMV])";
+        Pattern patt = Pattern.compile(valoresSumatorios);
+        Matcher matcher = patt.matcher(valoresSumatorios);
+
+        while(matcher.find()){
+
+            for (Numeros roman : Numeros.values() ){
+
+                if (roman.name().equals(matcher.group())){
+
+                    this.setResultat(roman.getNumero());
+
+                }
+            }
+        }
+
+
+    }
+
+
+
     public int getResultat(){
 
         return this.resultat;
