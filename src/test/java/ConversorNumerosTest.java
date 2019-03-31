@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 public class ConversorNumerosTest {
 
     @Test
-    public void testVerificar(){
+    public void testVerificar() {
 
 
         assertFalse(ConversorNumeros.verificar("IVX"));
@@ -16,6 +16,12 @@ public class ConversorNumerosTest {
         assertFalse(ConversorNumeros.verificar("CDD"));
 
         assertFalse(ConversorNumeros.verificar("MMMM"));
+
+        assertFalse(ConversorNumeros.verificar("MXCD"));
+
+        assertTrue(ConversorNumeros.verificar("MMMDCCCLXXXVIII"));
+
+        assertFalse(ConversorNumeros.verificar("MDCLXVIV"));
 
     }
 }
