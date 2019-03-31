@@ -1,5 +1,7 @@
 public enum Numeros {
 
+
+    // Cada linea de numero romano utilita el constructor y se asigna a this.numero
     I(1),
     V(5),
     X(10),
@@ -16,7 +18,7 @@ public enum Numeros {
 
     int numero = 0;
 
-    private Numeros(int numero){
+     Numeros(int numero){
 
         this.numero = numero;
 

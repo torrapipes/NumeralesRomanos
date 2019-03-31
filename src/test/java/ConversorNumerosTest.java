@@ -24,4 +24,24 @@ public class ConversorNumerosTest {
         assertFalse(ConversorNumeros.verificar("MDCLXVIV"));
 
     }
+
+
+    @Test
+    public void calcularGruposSubstractivos(){
+
+        ConversorNumeros cn = new ConversorNumeros();
+
+        cn.calcularGruposSubstractivos("IV");
+
+        assertEquals(4, cn.getResultat());
+
+        cn.setResultat(-4);
+
+        cn.calcularGruposSubstractivos("MCCCXL");
+
+        assertEquals(40, cn.getResultat());
+
+    }
+
+
 }

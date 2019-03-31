@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class ConversorNumeros {
 
+    private int resultat = 0;
 
     public ConversorNumeros(){}
 
@@ -16,6 +17,36 @@ public class ConversorNumeros {
 
     }
 
+
+    public void calcularGruposSubstractivos(String numero) {
+
+        String valoresSubstractivos = "C[MD]|XC|XL|IX|IV";
+        Pattern patt = Pattern.compile(valoresSubstractivos);
+        Matcher match = patt.matcher(numero);
+
+        while (match.find()) {
+
+            for (Numeros roman : Numeros.values()) {
+
+                if (roman.name().equals(match.group())) {
+
+                   setResultat(roman.getNumero());
+
+                }
+            }
+        }
+    }
+
+
+    public int getResultat(){
+
+        return this.resultat;
+    }
+
+    public void setResultat(int resultat){
+
+        this.resultat += resultat;
+    }
 
 
 }
