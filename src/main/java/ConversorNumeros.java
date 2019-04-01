@@ -27,7 +27,6 @@ public class ConversorNumeros {
 
 
     // Metodes
-
     /**
      * Verificam que el nombre a traduir sigui un nombre romà valid
      * @param nombre
@@ -123,7 +122,7 @@ public class ConversorNumeros {
 
 
     /**
-     * Sobrecàrrega del metode anterior per poder seguir testejant que vagi bé
+     * Sobrecàrrega del metode anterior per poder seguir-lo testeant
      * @param roma
      * @return
      */
@@ -144,6 +143,7 @@ public class ConversorNumeros {
         return 0;
 
     }
+
 
     public static void main(String[] args){
 

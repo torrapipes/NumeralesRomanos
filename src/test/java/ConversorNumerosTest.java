@@ -42,6 +42,12 @@ public class ConversorNumerosTest {
 
         assertEquals(40, cn.getResultat());
 
+        cn.setResultat(-40);
+
+        cn.calcularGrupsSubstractius("MCMXCIX");
+
+        assertEquals(999, cn.getResultat());
+
     }
 
 
