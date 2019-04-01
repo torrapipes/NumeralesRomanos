@@ -1,6 +1,6 @@
 # NumeralesRomanos
 
-Se trata de escribir una programa que transforme números romanos en decimales:
+Es tracta d'un programa que converteix els nombres romans.
 
 ```I  uno 
 II dos 
