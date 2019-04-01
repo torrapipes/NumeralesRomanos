@@ -121,6 +121,30 @@ public class ConversorNumeros {
         return 0;
     }
 
+
+    /**
+     * Sobrecàrrega del metode anterior per poder seguir testejant que vagi bé
+     * @param roma
+     * @return
+     */
+    public int convertirNumeroRoma(String roma) {
+
+        if (this.verificar(roma)) {
+
+            this.calcularGrupsSubstractius(roma);
+            this.calcularGrupsSumatoris(roma);
+
+            System.out.println("El nombre romà " + roma + " equival a " + this.getResultat());
+
+            return this.getResultat();
+        }
+
+        System.out.println("El nombre romà no és valid!");
+
+        return 0;
+
+    }
+
     public static void main(String[] args){
 
         ConversorNumeros cn = new ConversorNumeros();
