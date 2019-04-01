@@ -1,74 +1,97 @@
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ConversorNumeros {
 
+
+    // Atribut
     private int resultat = 0;
 
+
+    // Constructor
     public ConversorNumeros(){}
 
-    public static boolean verificar(String numero){
 
-        String verificacion = "^(M{0,3}(CM|CD|D?)C{0,3}(XC|XL|L?)X{0,3}(IX|IV|V?)I{0,3})";
-
-        return numero.matches(verificacion);
-
-    }
-
-
-    public void calcularGruposSubstractivos(String numero) {
-
-        String valoresSubstractivos = "C[MD]|XC|XL|IX|IV";
-        Pattern patt = Pattern.compile(valoresSubstractivos);
-        Matcher match = patt.matcher(numero);
-
-        while (match.find()) {
-
-            for (Numeros roman : Numeros.values()) {
-
-                if (roman.name().equals(match.group())) {
-
-                   setResultat(roman.getNumero());
-
-                }
-            }
-        }
-    }
-
-
-    public void calcularGruposSumatorios(String numero){
-
-        String valoresSumatorios = "C(?![MD])|X(?![CLMD])|I(?![XCLDMV])";
-        Pattern patt = Pattern.compile(valoresSumatorios);
-        Matcher matcher = patt.matcher(valoresSumatorios);
-
-        while(matcher.find()){
-
-            for (Numeros roman : Numeros.values() ){
-
-                if (roman.name().equals(matcher.group())){
-
-                    this.setResultat(roman.getNumero());
-
-                }
-            }
-        }
-
-
-    }
-
-
-
+    // Getters & Setters
     public int getResultat(){
 
         return this.resultat;
     }
 
+
     public void setResultat(int resultat){
 
         this.resultat += resultat;
+    }
+
+
+    // Metodes
+
+    /**
+     * Verificam que el nombre a traduir sigui un nombre romà valid
+     * @param nombre
+     * @return boolean
+     */
+    public static boolean verificar(String nombre){
+
+        String verificacio = "^(M{0,3}(CM|CD|D?)C{0,3}(XC|XL|L?)X{0,3}(IX|IV|V?)I{0,3})";
+
+        return nombre.matches(verificacio);
+
+    }
+
+
+    /**
+     * Calculam els valors substractius del nombre romà
+     * i ho guardam a la variable resultat
+     * @param nombre
+     */
+    public void calcularGrupsSubstractius(String nombre) {
+
+        String valoresSubstractius = "C[MD]|XC|XL|IX|IV";
+        Pattern patt = Pattern.compile(valoresSubstractius);
+        Matcher match = patt.matcher(nombre);
+
+        while (match.find()) {
+
+            for (Numeros roma : Numeros.values()) {
+
+                if (roma.name().equals(match.group())) {
+
+                   this.setResultat(roma.getNombre());
+
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Calculam els valors ssumatoris del nombre romà
+     * i ho guardam a la variable resultat
+     * @param nombre
+     */
+    public void calcularGrupsSumatoris(String nombre){
+
+            //String regexSumatoris = "C(?![MD])|X(?![CLMD])|I(?![XCLDMV])";
+            String regexSumatoris = "(?<!C)[DM]|(?<!X)[LC](?![DM])|(?<!I)[VX](?![LC])|I(?![VX])";
+            Pattern patt = Pattern.compile(regexSumatoris);
+            Matcher matcher = patt.matcher(nombre);
+
+            while (matcher.find()){
+
+                for (Numeros roma : Numeros.values()) {
+
+                    if (matcher.group().equals(roma.name())) {
+
+                        this.setResultat(roma.getNombre());
+
+                    }
+
+                }
+
+        }
+
     }
 
 

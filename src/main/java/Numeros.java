@@ -1,7 +1,8 @@
 public enum Numeros {
 
 
-    // Cada linea de numero romano utilita el constructor y se asigna a this.numero
+    /* Cada nombre romà utilitza el constructor, passant-li el nombre entre parentesis,
+    d'aquesta manera s'assigna a la variable nombre */
     I(1),
     V(5),
     X(10),
@@ -16,17 +17,17 @@ public enum Numeros {
     CD(400),
     CM(900);
 
-    int numero = 0;
+    int nombre = 0;
 
-     Numeros(int numero){
+     Numeros(int nombre){
 
-        this.numero = numero;
+        this.nombre = nombre;
 
     }
 
-    public int getNumero(){
+    public int getNombre(){
 
-        return this.numero;
+        return this.nombre;
 
     }
 

@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 
 public class ConversorNumerosTest {
 
+
     @Test
     public void verificarTest() {
 
@@ -27,17 +28,17 @@ public class ConversorNumerosTest {
 
 
     @Test
-    public void calcularGruposSubstractivosTest(){
+    public void calcularGrupsSubstractiusTest(){
 
         ConversorNumeros cn = new ConversorNumeros();
 
-        cn.calcularGruposSubstractivos("IV");
+        cn.calcularGrupsSubstractius("IV");
 
         assertEquals(4, cn.getResultat());
 
         cn.setResultat(-4);
 
-        cn.calcularGruposSubstractivos("MCCCXL");
+        cn.calcularGrupsSubstractius("MCCCXL");
 
         assertEquals(40, cn.getResultat());
 
@@ -45,13 +46,19 @@ public class ConversorNumerosTest {
 
 
     @Test
-    public void calcularGruposSumatoriosTest(){
+    public void calcularGrupsSumatorisTest(){
 
         ConversorNumeros cn = new ConversorNumeros();
 
-        cn.calcularGruposSumatorios("XXX");
+        cn.calcularGrupsSumatoris("XXX");
 
         assertEquals(30, cn.getResultat());
+
+        cn.setResultat(-30);
+
+        cn.calcularGrupsSumatoris("MMMDCCCLXXXVIII");
+
+        assertEquals(3888, cn.getResultat());
 
     }
 
