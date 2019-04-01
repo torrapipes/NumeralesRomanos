@@ -68,7 +68,7 @@ public class ConversorNumerosTest {
 
         ConversorNumeros cn = new ConversorNumeros();
 
-        assertEquals(149, cn.convertirNumeroRoma("CXLIX"));
+        assertEquals(149, cn.convertirNumeroRoma());
 
     }
 

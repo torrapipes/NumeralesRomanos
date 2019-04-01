@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -97,15 +98,36 @@ public class ConversorNumeros {
 
     /**
      * Crida als mètodes anteriors i retorna el resultat
-     * @param roma
      * @return resultat
      */
-    public int convertirNumeroRoma(String roma) {
+    public int convertirNumeroRoma() {
 
-        this.calcularGrupsSubstractius(roma);
-        this.calcularGrupsSumatoris(roma);
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Introdueix el nombre romà a convertir:");
+        String input = scan.next();
 
-        return this.getResultat();
+        if (this.verificar(input)) {
+
+            this.calcularGrupsSubstractius(input);
+            this.calcularGrupsSumatoris(input);
+
+            System.out.println("El nombre romà " + input + " equival a " + this.getResultat());
+
+            return this.getResultat();
+        }
+
+        System.out.println("El nombre romà no és valid!");
+
+        return 0;
+    }
+
+    public static void main(String[] args){
+
+        ConversorNumeros cn = new ConversorNumeros();
+
+        cn.convertirNumeroRoma();
 
     }
+
+
 }
