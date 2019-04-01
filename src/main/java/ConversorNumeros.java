@@ -95,4 +95,17 @@ public class ConversorNumeros {
     }
 
 
+    /**
+     * Crida als mètodes anteriors i retorna el resultat
+     * @param roma
+     * @return resultat
+     */
+    public int convertirNumeroRoma(String roma) {
+
+        this.calcularGrupsSubstractius(roma);
+        this.calcularGrupsSumatoris(roma);
+
+        return this.getResultat();
+
+    }
 }

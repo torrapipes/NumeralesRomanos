@@ -63,4 +63,14 @@ public class ConversorNumerosTest {
     }
 
 
+    @Test
+    public void CalcularTotal(){
+
+        ConversorNumeros cn = new ConversorNumeros();
+
+        assertEquals(149, cn.convertirNumeroRoma("CXLIX"));
+
+    }
+
+
 }
