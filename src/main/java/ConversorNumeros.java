@@ -96,6 +96,31 @@ public class ConversorNumeros {
 
 
     /**
+     * Sobrecàrrega del metode convertirNumeroRoma() per poder seguir-lo testeant
+     * @param roma
+     * @return
+     */
+    public int convertirNumeroRoma(String roma) {
+
+        if (this.verificar(roma)) {
+
+            this.calcularGrupsSubstractius(roma);
+            this.calcularGrupsSumatoris(roma);
+
+            System.out.println("El nombre romà " + roma + " equival a " + this.getResultat());
+
+            return this.getResultat();
+        }
+
+        System.out.println("El nombre romà no és valid!");
+
+        return 0;
+
+    }
+
+
+
+    /**
      * Crida als mètodes anteriors i retorna el resultat
      * @return resultat
      */
@@ -118,30 +143,6 @@ public class ConversorNumeros {
         System.out.println("El nombre romà no és valid!");
 
         return 0;
-    }
-
-
-    /**
-     * Sobrecàrrega del metode anterior per poder seguir-lo testeant
-     * @param roma
-     * @return
-     */
-    public int convertirNumeroRoma(String roma) {
-
-        if (this.verificar(roma)) {
-
-            this.calcularGrupsSubstractius(roma);
-            this.calcularGrupsSumatoris(roma);
-
-            System.out.println("El nombre romà " + roma + " equival a " + this.getResultat());
-
-            return this.getResultat();
-        }
-
-        System.out.println("El nombre romà no és valid!");
-
-        return 0;
-
     }
 
 
